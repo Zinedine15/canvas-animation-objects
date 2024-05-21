@@ -1,0 +1,42 @@
+#title {
+    font-weight: bold;
+    background: linear-gradient(25deg, cyan, green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial;
+}
+
+#titleCanvas1 {
+    font-weight: bold;
+    background: linear-gradient(90deg, yellow, orange, rgb(18, 89, 231));
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+
+#titleCanvas2 {
+    font-weight: bold;
+    background: linear-gradient(25deg, black,red, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+
+#titleCanvas3 {
+    font-weight: bold;
+    background: linear-gradient(30deg, rgb(85, 255, 85), black);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+
+}
