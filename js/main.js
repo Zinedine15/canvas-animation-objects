@@ -1,12 +1,21 @@
 const canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
+const canvas2 = document.getElementById("canvas2");
+let ctx2 = canvas2.getContext("2d");
+
+const coorX = document.getElementById("coorX");
+const coorY = document.getElementById("coorY");
 
 const window_height = 300;
 const window_width = 500;
 
 canvas.height = window_height;
 canvas.width = window_width;
-canvas.style.backgroundColor = "#b7f7ed";
+canvas.style.backgroundColor = `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},0.4)`;
+
+canvas2.height = window_height;
+canvas2.width = window_width;
+canvas2.style.backgroundColor = `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},0.4)`;
 
 class Circle {
   constructor(x, y, radius, color, text, backcolor, speed) {
@@ -55,6 +64,30 @@ class Circle {
   }
 }
 
+// Círculo en canvas2
+let randomRadius2 = Math.floor(Math.random() * 60 + 20);
+let randomX2 = Math.random() * window_width;
+let randomY2 = Math.random() * window_height;
+let randomBackcolor2 = `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},0.4)`;
+let randomStrokecolor2 = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
+let randomSpeed2 = Math.random() * 5 + 1;
+
+randomX2 = randomX2 < randomRadius2 ? randomRadius2 : randomX2 > window_width - randomRadius2 ? window_width - randomRadius2 : randomX2;
+randomY2 = randomY2 < randomRadius2 ? randomRadius2 : randomY2 > window_height - randomRadius2 ? window_height - randomRadius2 : randomY2;
+
+let miCirculo2 = new Circle(randomX2, randomY2, randomRadius2, randomStrokecolor2, "1", randomBackcolor2, randomSpeed2);
+
+function updateCircle2() {
+  requestAnimationFrame(updateCircle2);
+  ctx2.clearRect(0, 0, window_width, window_height);
+  miCirculo2.update(ctx2);
+  coorX.innerText = 'Coordenada en X: ' + miCirculo2.posX.toFixed(1);
+  coorY.innerText = 'Coordenada en Y: ' + miCirculo2.posY.toFixed(1);
+}
+
+updateCircle2();
+
+// Círculos en canvas
 const nCircles = 10;
 let circles = [];
 
